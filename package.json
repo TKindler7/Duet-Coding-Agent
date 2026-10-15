@@ -1,0 +1,25 @@
+{
+  "name": "duet-codex-claude",
+  "version": "0.9.0",
+  "private": true,
+  "type": "module",
+  "description": "One prompt: Claude and Codex both code, integrate, review, and fix.",
+  "engines": {
+    "node": ">=22"
+  },
+  "scripts": {
+    "test": "node --test test/*.test.mjs distribution/test/*.test.mjs && npm run test:ui",
+    "start": "node src/install-service.mjs --open",
+    "dev": "node src/web.mjs --open",
+    "cli": "node src/cli.mjs",
+    "test:ui": "node test/ui/browser-account.mjs && node test/ui/concurrent.mjs && node test/ui/timeout.mjs"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/TKindler7/Duet-Coding-Agent.git"
+  },
+  "homepage": "https://github.com/TKindler7/Duet-Coding-Agent#readme",
+  "bugs": {
+    "url": "https://github.com/TKindler7/Duet-Coding-Agent/issues"
+  }
+}

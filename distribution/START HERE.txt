@@ -1,0 +1,90 @@
+DUET — MAC BETA
+
+A private chat workspace where Claude Code and Codex help you build apps together.
+
+GET STARTED
+
+1. Extract the entire ZIP. Keep the extracted folder's contents together.
+2. Double-click Start Duet.command. A Terminal window opens setup automatically;
+   you do not need to type commands or install developer tools.
+3. Duet opens in your browser. Use its setup screen to install the coding tools
+   and sign in to your own Claude and ChatGPT accounts. You can close Terminal.
+   Sign-in opens the provider's browser page and Duet detects completion.
+   If Claude gives you a one-time code, paste it into the code field in Duet.
+   Bookmark the Duet address for next time; no more commands are needed for
+   normal setup, chats, or builds.
+4. Start a new chat, describe your app, and choose Build. Best quality is the
+   default; use the coordinator menu beside Build/Ask to choose Balanced or
+   Save usage. Open the activity panel to inspect model choices and reported
+   usage. Chat settings lets you limit agent steps and reported tokens.
+
+Requires macOS 13 or newer, an Apple Silicon or Intel Mac, and internet access for
+coding-tool setup and AI requests. Your accounts must provide access to Claude
+Code and Codex. Duet does not include subscriptions or share the creator's account.
+The first setup may take a few minutes.
+
+THIS IS AN UNSIGNED BETA
+
+macOS may warn that the downloaded launcher is from an unidentified developer.
+Only continue if you trust the person who sent it. Review macOS's normal security
+prompt; if an Open option is available, use it. If macOS blocks it, read the reason
+in System Settings > Privacy & Security. Use Open Anyway only if macOS offers it
+and you trust the sender and this beta. Do not disable Gatekeeper or run commands
+to remove download protections. A blocked launch is a reason to stop and ask the
+sender for a signed build.
+Apple's guidance: https://support.apple.com/en-us/102445
+
+WHAT IT INSTALLS
+
+Duet stores its runtime, its Codex installation, chats, and default projects in:
+  ~/Library/Application Support/Duet
+
+Claude Code uses its official installer and its own per-user locations, including
+~/.local/bin. Both providers manage their own sign-in files on your Mac.
+
+It registers a background service for your macOS user at:
+  ~/Library/LaunchAgents/local.duet.server.plist
+
+That service starts when you sign in and restarts after an unexpected exit. It
+serves only your own Mac at 127.0.0.1; it does not publish your app to the internet.
+You can close Terminal, the browser, or the downloaded folder after setup. Keep
+Start Duet.command and the bundle if you want an easy way to reopen or update it.
+
+No administrator password is needed. Node.js is included for both Mac processor
+types. The included runtime files were checked against Node.js's published SHA256
+checksums when this beta was packaged. Checksums detect damaged files; they are
+not a substitute for a signed and notarized application.
+
+PRIVACY AND ACCOUNTS
+
+This package contains application code and runtimes only—no chats, project files,
+access tokens, or creator account credentials. Your sign-ins stay on your Mac and
+are handled by the official coding tools. Prompts and project content read by the
+coding tools are sent to the providers using your own accounts and usage limits.
+Do not share your installed Library/Application Support/Duet folder as a beta.
+
+An existing Duet installation keeps its chats and projects. If a different older
+background service is present, setup stops instead of interrupting its build.
+Finish the old build and ask the sender for migration help before changing it.
+
+TROUBLESHOOTING
+
+• Extract the whole ZIP; do not launch a file from inside its archive preview.
+• If the browser cannot connect, open Start Duet.command again.
+• Existing chats keep their project folders. macOS may ask you for access when
+  using Documents, Desktop, or other protected locations.
+• Logs are in ~/Library/Application Support/Duet/logs.
+• To stop automatic login startup, disable Duet/node in System Settings > General
+  > Login Items & Extensions. To remove it entirely, first finish active work and
+  ask the sender for help preserving your chats and projects.
+
+The software is a local beta, not a signed commercial Mac app. Review generated
+code and test your app before publishing it. See LICENSES for third-party notices.
+
+NEW IN 0.6
+After a build, review the requirement checklist and open the local app preview.
+Assistant-reported results are separate from checks Duet actually ran.
+Use Works for me / Needs fixes to keep feedback on your Mac.
+A source checkpoint is saved before every build. Restore first saves a recovery copy.
+Built pages may need rebuilding after restoration. Backend apps need a separate launch step.
+Project settings can remember your design decisions and requirements.
